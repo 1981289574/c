@@ -1,0 +1,51 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//写代码将三个整数数按从大到小输出。
+//
+//例如：
+//
+//输入：2 3 1
+//
+//输出：3 2 1
+#include <stdio.h>
+//指针求解
+//int  main()
+//{
+//	int* p1, * p2, * p3, * p, a, b, c;
+//	scanf("%d %d %d", &a, &b, &c);
+//	p1 = &a;
+//	p2 = &b;
+//	p3 = &c;
+//	if (a < b)
+//	{
+//		p = p1; p1 = p2; p2 = p;
+//	}
+//	if (b< c)
+//	{
+//		p = p2; p2 = p3; p3 = p;
+//	}
+//	if (a < c)
+//	{
+//		p = p1; p1 = p3; p3 = p;
+//	}
+//	printf("从大到小输出");
+//	printf("a=%d,b=%d,c=%d\n", *p1, *p2, *p3);
+//	return 0;
+//}
+//#include<stdio.h>
+int  main()
+{
+	int i, j, temp, a[3];
+	for (i = 0; i < 3; i++)
+		scanf("%d", a + i);
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
+			if (*(a + i) < *(a + j))
+			{
+				temp = *(a + i);
+				*(a + i) = *(a + j);
+				*(a + j) = temp;
+			}
+	printf("从小到大输出");
+	printf("a=%d,b=%d,c=%d\n", *(a + 0), *(a + 1), *(a + 2));
+	return 0;
+}
