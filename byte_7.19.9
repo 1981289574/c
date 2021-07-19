@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+
+
+//求10 个整数中最大值
+#include <stdio.h>
+
+int main() {
+    int a[11];
+    for (int i = 1; i <= 10; i++) {
+        scanf("%d", &a[i]);
+    }
+    a[0] = a[1];
+    for (int i = 1; i <= 10; i++) {
+        if (a[i] >= a[0]) a[0] = a[i];
+    }
+    printf("%d\n", a[0]);
+    return 0;
+}
