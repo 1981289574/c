@@ -1,0 +1,55 @@
+#define _CRT_SECURE_NO_WARNINGS          
+#include<stdio.h>
+#include<string.h>
+//strcpy拷贝字符串,返回的是目标空间的起始地址的值
+//int main() 
+//{
+//	char arr1[20] = { 0 };//假设是我的字符空间,目标空间
+//	char arr2[] = "hello";
+//	char arr3[20] = "xxxxxxxxxxxxxxxx";
+//	char arr4[] = "hi";
+//	strcpy(arr1, arr2);//数组名表示目标空间首地址
+//	strcpy(arr3, arr4);//\0是字符串拷贝的结束标志
+//	char* ret = strcpy(arr1, arr2);
+//	printf("%s\n", arr1);
+//	printf("%s\n", arr3);
+//	printf("%s\n", ret);
+//
+//
+//	return 0;
+//}
+
+
+//memset函数
+//int main()
+//{
+//	char arr[] = "hello bit";
+//	char* ret = memset(arr, 'x', 5);//前五个设置成x
+//	printf("%s\n", ret);//输出xxxxx bit
+//
+//	return 0;
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	memset(arr, 1, 5 * sizeof(int));//前五个设置成1
+//
+//	return 0;
+//}
+//写一个函数，求两个数的最大值
+
+int get_max(int x,int y)
+{
+	return(x > y ? x : y);
+}
+int main()
+{
+	int a = 0;
+	int b = 0;
+	scanf("%d%d", &a, &b);
+
+	//求两个数的较大值
+	int max=get_max(a, b);
+	printf("max=%d\n", max);
+	return 0;
+}
