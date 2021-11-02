@@ -208,26 +208,125 @@
 //}
 
 //另一种思路
+//int main()
+//{
+//	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
+//	//int arr[10] = { 0 };有10个0
+//	//查找7
+//	//遍历数组
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	int flag = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		if (7 == arr[i])//查找7
+//		{
+//			break;
+//		}
+//	}
+//	if (flag == 1)
+//		printf("找到了，下标是：%d", i)
+//	else
+//		printf("找不到");
+//	return 0;
+//}
+
+
+//折半查找法;
+//#include<stdio.h>
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 1;
+//	int mid = 0;
+//	int k = 7;//要查找的元素
+//	int flag = 0;//找不到
+//	//求中间元素的下标
+//	while (left <= right)
+//	{
+//		mid = (left + right) / 2;
+//		if (arr[mid] < 1)
+//		{
+//			left = mid + 1;
+//		}
+//		else if (mid > k)
+//		{
+//			right = mid - 1;
+//		}
+//		else
+//		{
+//			printf("找到了");
+//			flag = 1;
+//			break;
+//		}
+//	}
+//	if (flag == 1)
+//		printf("找到了:%d",mid);
+//	else
+//		printf("没找到");
+//}
+
+//4t编写代码，演示两个字符从两端移，向中间汇聚动
+
+//welcome to bit!!!!!!
+//####################
+//w##################!
+//we################!!
+//wel##############!!!
+//welc############!!!!
+//....
+//welcome to bit!!!!!!
+//#include<string.h>
+//#include<windows.h>
+//int main()
+//{
+//	char arr1[] = "welcome to bit!!!!!";
+//	char arr2[] = "####################";
+//	char ch = "abc";
+//	int left = 0;
+//	int right =strlen(arr2)-1 ;
+//	while(left<=right)//使用的是while
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s\n", arr2);
+//		Sleep(1000); //单位是毫秒
+//		system("cls");//执行系统命令，清空屏幕，可以从命令提示符中输入cmd来观察
+//		//输出cls作用为清除屏幕
+//		left++;
+//		right--;
+//	}
+//	return 0;
+//}
+
+//5t编写代码，模拟用户登录详情，并且只能登录三次。
+//（只允许输入三次密码
+//如果密码正确则登陆成功，
+//如果三次输入错误，则退出程序
 int main()
 {
-	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	//int arr[10] = { 0 };有10个0
-	//查找7
-	//遍历数组
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int i = 0;
-	int flag = 0;
-	for (i = 0; i < sz; i++)
+	int i=0;
+	int j=0;
+	//假设真实的密码是字符串：“123456”
+	char password[20] = { 0 };
+	for (i = 0; i < 3; i++)
 	{
-		if (7 == arr[i])//查找7
+		printf("请输入密码：");
+		scanf("%s", &password);
+		//两个字符串的比较不能用等号==,eg:password=="123456";
+		if (strcmp(password, "123456") == 0)
 		{
+			printf("登陆成功\n");
 			break;
 		}
+		else
+		{
+			printf("密码错误\n");
+		}
 	}
-	if (flag == 1)
-		printf("找到了，下标是：%d", i)
-	else
-		printf("找不到");
+	if (i == 3)
+		printf("三次密码错误，退出登录");
 	return 0;
 }
-//4t编写代码;
